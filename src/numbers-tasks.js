@@ -295,7 +295,6 @@ function getSumToN(n) {
  */
 function getSumOfDigits(num) {
   const arrayNum = Array.from(String(num), Number);
-  console.log(arrayNum);
   const sum = 0;
   const result = arrayNum.reduce((a, b) => a + b, sum);
   return result;
@@ -312,8 +311,14 @@ function getSumOfDigits(num) {
  *   16  => true
  *   15  => false
  */
-function isPowerOfTwo(/* num */) {
-  throw new Error('Not implemented');
+function isPowerOfTwo(n) {
+  if (n === 1) {
+    return true;
+  }
+  if (n % 2 !== 0) {
+    return false;
+  }
+  return isPowerOfTwo(n / 2);
 }
 
 /**
